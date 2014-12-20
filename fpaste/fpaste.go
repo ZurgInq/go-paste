@@ -29,7 +29,7 @@ type fpasteResponse struct {
 
 // Put uploads text to fpaste.org. It returns the ID of the created paste or an
 // error. The title is not used, as the service does not support titles.
-func (f Fpaste) Put(text, title string) (id string, err error) {
+func (f Fpaste) Put(text, title, highlight string) (id string, err error) {
 	data := url.Values{}
 	// Required values.
 	data.Set("paste_data", text)
